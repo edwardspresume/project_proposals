@@ -62,7 +62,7 @@
 <style>
     form {
         padding: 40px;
-        margin: 4rem auto;
+        margin: 2.5rem auto;
         max-width: 550px;
         border-radius: 10px;
         background: rgba(0, 0, 0, 0.4);
