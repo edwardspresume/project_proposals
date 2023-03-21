@@ -83,9 +83,9 @@
 
     input,
     textarea {
-        padding: 0.6rem;
-        border-radius: 6px;
-        border: 1px solid #b8b8b8;
+        padding: 0.7rem;
+        /* border-radius: 6px; */
+        border-bottom: 1px solid #b8b8b8;
     }
 
     button {
