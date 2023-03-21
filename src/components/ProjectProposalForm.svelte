@@ -33,7 +33,7 @@
     {/if}
 
     <label>
-        Title
+        <span>Title</span>
         <input
             required
             type="text"
@@ -45,7 +45,7 @@
     </label>
 
     <label>
-        Description
+        <span>Description</span>
         <textarea
             required
             id="description"
@@ -60,6 +60,16 @@
 </form>
 
 <style>
+    label span {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+    }
+
     form {
         padding: 40px;
         max-width: 550px;
