@@ -62,11 +62,11 @@
 <style>
     form {
         padding: 40px;
-        margin: 2.5rem auto;
         max-width: 550px;
+        margin: 2.5rem auto;
         border-radius: 10px;
-        background: rgba(0, 0, 0, 0.4);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     }
 
     .response_message {
@@ -85,7 +85,7 @@
     textarea {
         padding: 0.6rem;
         border-radius: 6px;
-        border: 1px solid #ccc;
+        border: 1px solid #b8b8b8;
     }
 
     button {
