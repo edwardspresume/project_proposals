@@ -94,13 +94,12 @@
     input,
     textarea {
         padding: 0.7rem;
-        /* border-radius: 6px; */
         border-bottom: 1px solid #b8b8b8;
     }
 
     button {
         width: 100%;
-        font-size: 2rem;
+        font-size: 1.8rem;
         padding: 0.9rem;
         text-align: center;
         border-radius: 7px;
