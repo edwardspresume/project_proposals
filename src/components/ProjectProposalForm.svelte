@@ -40,6 +40,7 @@
             id="title"
             name="title"
             minlength="3"
+            enterkeyhint="next"
             placeholder="Enter the project title"
         />
     </label>
@@ -52,6 +53,7 @@
             name="description"
             rows="5"
             minlength="10"
+            enterkeyhint="enter"
             placeholder="Enter the project description"
         />
     </label>
