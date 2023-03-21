@@ -1,0 +1,22 @@
+{
+    "name": "project_proposals",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/svelte": "^2.1.0",
+        "@astrojs/vercel": "^3.2.1",
+        "@prisma/client": "^4.11.0",
+        "astro": "^2.1.3",
+        "svelte": "^3.54.0"
+    },
+    "devDependencies": {
+        "prisma": "^4.11.0"
+    }
+}
