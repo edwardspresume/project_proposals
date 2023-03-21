@@ -1,5 +1,6 @@
 <script lang="ts">
     let responseMessage: string | null = null;
+    let isSuccess: boolean = false;
 
     async function submit(e: SubmitEvent) {
         e.preventDefault();
@@ -19,6 +20,8 @@
                 throw new Error(data.message);
             }
 
+            isSuccess = true;
+
             // Clear the form fields after successful submission
             (e.target as HTMLFormElement).reset();
         } catch (error) {
@@ -29,13 +32,18 @@
 
 <form on:submit={submit}>
     {#if responseMessage}
-        <p class="response_message">{responseMessage}</p>
+        <p
+            class="response_message {isSuccess
+                ? 'success_message'
+                : 'error_message'}"
+        >
+            {responseMessage}
+        </p>
     {/if}
 
     <label>
         <span>Title</span>
         <input
-            required
             type="text"
             id="title"
             name="title"
@@ -48,7 +56,6 @@
     <label>
         <span>Description</span>
         <textarea
-            required
             id="description"
             name="description"
             rows="5"
@@ -84,6 +91,14 @@
     .response_message {
         font-weight: bold;
         margin-bottom: 3rem;
+    }
+
+    .success_message {
+        color: hsl(169, 100%, 50%);
+    }
+
+    .error_message {
+        color: hsl(0, 83%, 46%);
     }
 
     label {
