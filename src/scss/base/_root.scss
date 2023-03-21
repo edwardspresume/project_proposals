@@ -1,0 +1,34 @@
+/* =========================================
+                GLOBAL
+========================================= */
+
+$text_top_margin: 1.7rem;
+
+main {
+    margin-top: 4rem;
+    color: hsl(0, 0%, 90%);
+
+    h1 {
+        margin: $text_top_margin 0 4rem 0;
+    }
+}
+
+.container {
+    $padding: 1rem;
+    $max_width: 610px;
+
+    margin-inline: auto;
+    width: min($max_width, 100% - ($padding * 2));
+}
+
+/* Utility classes */
+
+.visually_hidden {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+}

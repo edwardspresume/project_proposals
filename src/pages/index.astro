@@ -1,5 +1,6 @@
 ---
 import ProjectProposalForm from '../components/ProjectProposalForm.svelte';
+import '../scss/global.scss';
 ---
 
 <html lang='en'>
@@ -10,20 +11,23 @@ import ProjectProposalForm from '../components/ProjectProposalForm.svelte';
         <meta name='generator' content={Astro.generator} />
         <title>Project Proposal</title>
     </head>
-    <body>
-        <h1>Project Proposal</h1>
+    <body style='background: linear-gradient(#141e30, #243b55);'>
+        <main class='max-w-xl text-slate-200 p-4 m-auto'>
+            <div class='container'>
+                <h1 class='text-2xl font-bold'>Project Proposal</h1>
 
-        <p>
-            Welcome to Project Proposal, a site where you can share your project
-            ideas, and see them come to life. If you have a vision for a
-            website, a feature, browser extension, automation, desktop based
-            tool that you want to create, I’m here to help you make it happen.
-            On this site, you can check out some of the projects I’ve done
-            before and pitch your project idea to me. If I like your idea and
-            think it’s feasible, I’ll contact you and we can discuss the details
-            further
-        </p>
+                <p>
+                    Welcome to Project Proposal, a site where you can share your
+                    project ideas, and see them come to life. If you have a
+                    vision for a website, a feature, browser extension,
+                    automation, desktop based tool that you want to create, I’m
+                    here to help you make it happen. If I like your idea and
+                    think it’s feasible, I’ll contact you and we can discuss the
+                    details further
+                </p>
 
-        <ProjectProposalForm client:load />
+                <ProjectProposalForm client:load />
+            </div>
+        </main>
     </body>
 </html>

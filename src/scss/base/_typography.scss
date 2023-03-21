@@ -1,0 +1,63 @@
+/* =========================================
+                GLOBAL
+========================================= */
+$mb: 990px;
+$dt: 991px;
+
+html {
+    font-size: 62.5%;
+}
+
+body:not(.homepage) main {
+    h1 {
+        text-align: center;
+    }
+}
+
+h1,
+h2 {
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+main {
+    p,
+    li {
+        line-height: 2;
+    }
+
+    li {
+        font-size: 1.5rem;
+    }
+}
+
+/* =========================================
+                Mobiles
+========================================= */
+
+@media (max-width: $mb) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+            Laptop - Desktop
+========================================= */
+
+@media (min-width: $dt) {
+    main h1 {
+        font-size: 3.4rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+}
