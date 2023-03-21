@@ -109,7 +109,7 @@
         background: linear-gradient(to right, #cb3066, #0e5cd1);
         background-size: 400% 400%;
         box-shadow: 0 3px 10px 0 rgba(205, 209, 215, 0.1);
-        animation: gradient 2.7s ease-in-out infinite;
+        animation: gradient 3.5s ease-in-out infinite;
     }
 
     button:hover {
