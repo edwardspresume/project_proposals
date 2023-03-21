@@ -44,6 +44,7 @@
     <label>
         <span>Title</span>
         <input
+            required
             type="text"
             id="title"
             name="title"
@@ -56,6 +57,7 @@
     <label>
         <span>Description</span>
         <textarea
+            required
             id="description"
             name="description"
             rows="5"
