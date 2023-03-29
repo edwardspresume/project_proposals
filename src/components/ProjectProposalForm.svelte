@@ -8,16 +8,15 @@
         const formData = new FormData(e.target as HTMLFormElement);
 
         try {
-            const response = await fetch('/api/sendProposal', {
+            const { message, ok } = await fetch('/api/sendProposal', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((res) => res.json());
 
-            const data = await response.json();
-            responseMessage = data.message;
+            responseMessage = message;
 
-            if (!response.ok) {
-                throw new Error(data.message);
+            if (!ok) {
+                throw new Error(message);
             }
 
             isSuccess = true;
