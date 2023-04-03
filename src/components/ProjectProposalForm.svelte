@@ -56,7 +56,7 @@
             class="enhanceai"
             enterkeyhint="next"
             placeholder="Enter the project title"
-            data-aicontext="Project Proposal is a site to submit project proposals. Please enter the project title."
+            data-aicontext="Please enter the title of your project"
         />
         {#if fieldErrors.title}<p class="field_error">
                 {fieldErrors.title}
@@ -73,7 +73,7 @@
             class="enhanceai"
             enterkeyhint="enter"
             placeholder="Enter the project description"
-            data-aicontext="Project Proposal is a site to submit project proposals. Please enter the project description."
+            data-aicontext="Please enter the description of your project"
         />
         {#if fieldErrors.description}<p class="field_error">
                 {fieldErrors.description}
