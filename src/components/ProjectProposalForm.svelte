@@ -1,6 +1,7 @@
 <script lang="ts">
     let responseMessage: string | null = null;
     let isSuccess: boolean = false;
+    let fieldErrors: Record<string, string> = {};
 
     async function submit(e: SubmitEvent) {
         e.preventDefault();
@@ -8,18 +9,19 @@
         const formData = new FormData(e.target as HTMLFormElement);
 
         try {
-            const { message, ok } = await fetch('/api/sendProposal', {
+            const response = await fetch('/api/sendProposal', {
                 method: 'POST',
                 body: formData,
-            }).then((res) => res.json());
+            });
+            const { message, ok, errors } = await response.json();
 
+            isSuccess = ok;
             responseMessage = message;
+            fieldErrors = errors || {};
 
             if (!ok) {
                 throw new Error(message);
             }
-
-            isSuccess = true;
 
             // Clear the form fields after successful submission
             (e.target as HTMLFormElement).reset();
@@ -30,43 +32,61 @@
 </script>
 
 <form on:submit={submit}>
-    {#if responseMessage}
-        <p
-            class="response_message {isSuccess
-                ? 'success_message'
-                : 'error_message'}"
-        >
-            {responseMessage}
-        </p>
-    {/if}
+    <label>
+        <span>Email</span>
+        <input
+            required
+            type="email"
+            name="email"
+            enterkeyhint="next"
+            placeholder="Enter your email"
+        />
+        {#if fieldErrors.email}<p class="field_error">
+                {fieldErrors.email}
+            </p>{/if}
+    </label>
 
     <label>
         <span>Title</span>
         <input
             required
             type="text"
-            id="title"
             name="title"
             minlength="3"
             enterkeyhint="next"
             placeholder="Enter the project title"
         />
+        {#if fieldErrors.title}<p class="field_error">
+                {fieldErrors.title}
+            </p>{/if}
     </label>
 
     <label>
         <span>Description</span>
         <textarea
             required
-            id="description"
             name="description"
             rows="5"
             minlength="10"
             enterkeyhint="enter"
             placeholder="Enter the project description"
         />
+        {#if fieldErrors.description}<p class="field_error">
+                {fieldErrors.description}
+            </p>{/if}
     </label>
 
     <button type="submit">Submit Proposal</button>
+
+    {#if responseMessage}
+        <p
+            class="response_message"
+            class:success_message={isSuccess}
+            class:error_message={!isSuccess}
+        >
+            {responseMessage}
+        </p>
+    {/if}
 </form>
 
 <style>
@@ -89,9 +109,15 @@
         box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     }
 
+    .field_error {
+        color: hsl(0, 83%, 46%);
+        font-size: 0.8em;
+        margin-top: 2px;
+    }
+
     .response_message {
         font-weight: bold;
-        margin-bottom: 3rem;
+        margin-top: 3rem;
     }
 
     .success_message {
@@ -111,8 +137,9 @@
 
     input,
     textarea {
-        padding: 0.7rem;
-        border-bottom: 1px solid #b8b8b8;
+        border-radius: 5px;
+        padding: 1.2rem 1rem;
+        border: 1px solid #b8b8b834;
     }
 
     button {
