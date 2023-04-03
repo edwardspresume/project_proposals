@@ -53,8 +53,10 @@
             type="text"
             name="title"
             minlength="3"
+            class="enhanceai"
             enterkeyhint="next"
             placeholder="Enter the project title"
+            data-aicontext="Project Proposal is a site to submit project proposals. Please enter the project title."
         />
         {#if fieldErrors.title}<p class="field_error">
                 {fieldErrors.title}
@@ -68,8 +70,10 @@
             name="description"
             rows="5"
             minlength="10"
+            class="enhanceai"
             enterkeyhint="enter"
             placeholder="Enter the project description"
+            data-aicontext="Project Proposal is a site to submit project proposals. Please enter the project description."
         />
         {#if fieldErrors.description}<p class="field_error">
                 {fieldErrors.description}
