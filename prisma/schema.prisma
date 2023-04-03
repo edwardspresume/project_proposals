@@ -9,6 +9,7 @@ datasource db {
 
 model proposal {
   id          Int       @id @default(autoincrement())
+  email       String    @db.VarChar(255)
   title       String    @db.VarChar(255)
   description String    @db.Text
   createdAt   DateTime  @default(now()) @db.Timestamp(3)
