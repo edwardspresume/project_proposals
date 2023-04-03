@@ -34,7 +34,7 @@ export const post: APIRoute = async ({ request }) => {
 
         await sendEmail({
             from: `Sender <${formData.email}>`,
-            to: 'edwardspresume@gmail.com',
+            to: process.env.GMAIL_PASS,
             replyTo: formData.email,
             subject: `Project proposal: ${formData.title}`,
             html: `
