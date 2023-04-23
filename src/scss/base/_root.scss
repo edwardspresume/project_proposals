@@ -4,9 +4,12 @@
 
 $text_top_margin: 1.7rem;
 
+body {
+    color: hsl(0, 0%, 90%);
+}
+
 main {
     margin-top: 3rem;
-    color: hsl(0, 0%, 90%);
 
     h1 {
         margin-bottom: 3rem;
@@ -15,7 +18,7 @@ main {
 
 .container {
     $padding: 1rem;
-    $max_width: 610px;
+    $max_width: 910px;
 
     margin-inline: auto;
     width: min($max_width, 100% - ($padding * 2));

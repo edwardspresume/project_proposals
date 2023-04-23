@@ -7,17 +7,19 @@ import '../scss/global.scss';
     <head>
         <meta charset='utf-8' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='generator' content={Astro.generator} />
         <title>Project Proposal</title>
         <script
             type='text/javascript'
             src='https://enhanceai.dev/library/enhanceai-v0.1.0.min.js'
         ></script>
+        <script
+            src='https://kit.fontawesome.com/08d567bbe7.js'
+            crossorigin='anonymous'
+        ></script>
     </head>
-    <body
-        style='background: linear-gradient(#141e30, #243b55); padding-bottom: 7rem;'
-    >
+    <body style='background: linear-gradient(#141e30, #243b55); '>
         <main>
             <div class='container'>
                 <h1>Project Proposal</h1>
@@ -35,5 +37,51 @@ import '../scss/global.scss';
                 <ProjectProposalForm client:load />
             </div>
         </main>
+
+        <footer>
+            <div class='container'>
+                <p>
+                    &copy; 2023 Built by <a
+                        href='https://twitter.com/edwardspresume'
+                        target='_blank'>Edwards Presume</a
+                    >
+                </p>
+
+                <a
+                    class='github_link'
+                    href='https://github.com/edwardspresume/project_proposals'
+                    target='_blank'><i class='fa-brands fa-github'></i></a
+                >
+            </div>
+        </footer>
     </body>
 </html>
+
+<style lang='scss'>
+    footer {
+        padding: 2rem 0;
+        margin-top: 10rem;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        p {
+            font-size: 1.5rem;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        .github_link {
+            font-size: 2rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        footer {
+            margin-top: 15rem;
+        }
+    }
+</style>
