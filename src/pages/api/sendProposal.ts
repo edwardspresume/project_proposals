@@ -54,7 +54,7 @@ export const post: APIRoute = async ({ request }) => {
         };
     } catch (error) {
         console.error('Error:', error);
-        const errorMessage = 'An error occurred while processing your request.';
+        let errorMessage = 'An error occurred while processing your request.';
 
         if (error instanceof Error) {
             if (error.message.includes('Database error')) {
