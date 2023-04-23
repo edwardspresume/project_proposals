@@ -111,7 +111,7 @@
     }
 
     form {
-        padding: 40px;
+        padding: 30px;
         max-width: 550px;
         margin: 2.5rem auto;
         border-radius: 10px;
