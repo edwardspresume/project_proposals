@@ -2,6 +2,7 @@
     let responseMessage: string | null = null;
     let isSuccess: boolean = false;
     let fieldErrors: Record<string, string> = {};
+    let isLoading: boolean = false;
 
     async function submit(e: SubmitEvent) {
         e.preventDefault();
@@ -9,6 +10,7 @@
         const formData = new FormData(e.target as HTMLFormElement);
 
         try {
+            isLoading = true;
             const response = await fetch('/api/sendProposal', {
                 method: 'POST',
                 body: formData,
@@ -27,6 +29,8 @@
             (e.target as HTMLFormElement).reset();
         } catch (error) {
             console.error('Error submitting form:', error);
+        } finally {
+            isLoading = false;
         }
     }
 </script>
@@ -80,7 +84,9 @@
             </p>{/if}
     </label>
 
-    <button type="submit">Submit Proposal</button>
+    <button type="submit" disabled={isLoading}>
+        {isLoading ? 'Sending...' : ' Submit Proposal'}
+    </button>
 
     {#if responseMessage}
         <p
